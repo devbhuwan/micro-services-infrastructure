@@ -28,7 +28,7 @@ echo "CREATE API GATEWAY PROJECT"
 #
 spring init\
  -n=api-gateway\
- -d=cloud-zuul,cloud-config-client,cloud-oauth2,cloud-eureka,actuator,cloud-hystrix\
+ -d=cloud-gateway,cloud-config-client,cloud-oauth2,cloud-eureka,actuator,cloud-hystrix\
  --groupId=com.developerbhuwan\
  --package-name=com.developerbhuwan.apigateway\
  --description=APIGateway\

@@ -1,0 +1,12 @@
+version: "3"
+services:
+  config-server:
+    image: devbhuwan/config-server
+    env_file:
+      - env/config-server.env
+    volumes:
+      - configs:/etc/configs/config-server/
+  api-gateway:
+    image: devbhuwan/api-gateway
+    env_file:
+      -
