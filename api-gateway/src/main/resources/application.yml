@@ -1,0 +1,15 @@
+---
+spring:
+  profiles: local
+  cloud:
+    gateway:
+      routes:
+      - id: payment-service
+        uri: baeldung.com
+      - id: myOtherRouting
+        uri: localhost:9999
+
+logging:
+  level:
+    org.springframework.cloud.gateway=TRACE
+---

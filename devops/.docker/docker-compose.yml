@@ -9,4 +9,8 @@ services:
   api-gateway:
     image: devbhuwan/api-gateway
     env_file:
-      -
+      - env/api-gateway.env
+  service-discovery:
+    image: devbhuwan/service-discovery
+    env_file:
+      - env/service-discovery.env
