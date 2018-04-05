@@ -7,15 +7,6 @@ services:
       dockerfile: devops/.docker/spring-boot/Dockerfile
       args:
         - JAR_FILE=config-server/target/config-server-1.0-SNAPSHOT.jar
-    env_file:
-      - env/config-server.env
-  api-gateway:
-    image: devbhuwan/api-gateway
-    build:
-      context: ../../
-      dockerfile: devops/.docker/spring-boot/Dockerfile
-      args:
-        - JAR_FILE=api-gateway/target/api-gateway-1.0-SNAPSHOT.jar
   service-discovery:
     image: devbhuwan/service-discovery
     build:
@@ -23,3 +14,10 @@ services:
       dockerfile: devops/.docker/spring-boot/Dockerfile
       args:
         - JAR_FILE=service-discovery/target/service-discovery-1.0-SNAPSHOT.jar
+  api-gateway:
+    image: devbhuwan/api-gateway
+    build:
+      context: ../../
+      dockerfile: devops/.docker/spring-boot/Dockerfile
+      args:
+        - JAR_FILE=api-gateway/target/api-gateway-1.0-SNAPSHOT.jar

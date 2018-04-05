@@ -5,12 +5,34 @@ services:
     env_file:
       - env/config-server.env
     volumes:
-      - configs:/etc/configs/config-server/
-  api-gateway:
-    image: devbhuwan/api-gateway
-    env_file:
-      - env/api-gateway.env
+      - ./configs:/etc/microservice-platform/configs/
+    networks:
+      - backend
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8888"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+    ports:
+      - 8888
   service-discovery:
     image: devbhuwan/service-discovery
     env_file:
       - env/service-discovery.env
+    networks:
+      - backend
+    depends_on:
+      - config-server
+    ports:
+      - 8761
+  api-gateway:
+    image: devbhuwan/api-gateway
+    env_file:
+      - env/api-gateway.env
+    networks:
+      - backend
+    depends_on:
+      - service-discovery
+      - config-server
+networks:
+  backend:
