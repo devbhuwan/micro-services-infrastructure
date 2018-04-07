@@ -15,16 +15,16 @@ services:
       retries: 3
     ports:
       - 8888:8888
-#  service-discovery:
-#    image: devbhuwan/service-discovery
-#    env_file:
-#      - env/service-discovery.env
-#    networks:
-#      - backend
-#    depends_on:
-#      - config-server
-#    ports:
-#      - 8761
+  service-discovery:
+    image: devbhuwan/service-discovery
+    env_file:
+      - env/service-discovery.env
+    networks:
+      - backend
+    depends_on:
+      - config-server
+    ports:
+      - 8761:8761
 #  api-gateway:
 #    image: devbhuwan/api-gateway
 #    env_file:
