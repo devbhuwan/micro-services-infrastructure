@@ -1,0 +1,12 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: /home/developerbhuwan/bitdrafter/github/springboot-by-examples/micro-services-infrastructure/devops/.docker/configs
+
