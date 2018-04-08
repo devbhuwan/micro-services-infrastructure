@@ -14,10 +14,10 @@ services:
       dockerfile: devops/.docker/spring-boot/Dockerfile
       args:
         - JAR_FILE=service-discovery/target/service-discovery-1.0-SNAPSHOT.jar
-  api-gateway:
-    image: devbhuwan/api-gateway
-    build:
-      context: ../../
-      dockerfile: devops/.docker/spring-boot/Dockerfile
-      args:
-        - JAR_FILE=api-gateway/target/api-gateway-1.0-SNAPSHOT.jar
+#  api-gateway:
+#    image: devbhuwan/api-gateway
+#    build:
+#      context: ../../
+#      dockerfile: devops/.docker/spring-boot/Dockerfile
+#      args:
+#        - JAR_FILE=api-gateway/target/api-gateway-1.0-SNAPSHOT.jar
