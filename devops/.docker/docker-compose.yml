@@ -1,11 +1,5 @@
 version: "3"
 services:
-  service-discovery:
-    image: devbhuwan/service-discovery
-    env_file:
-      - env/service-discovery.env
-    ports:
-      - 8761:8761
   config-server:
     image: devbhuwan/config-server
     env_file:
@@ -14,3 +8,9 @@ services:
       - service-discovery:service-discovery
     ports:
       - 8888:8888
+  service-discovery:
+    image: devbhuwan/service-discovery
+    env_file:
+      - env/service-discovery.env
+    ports:
+      - 8761:8761
